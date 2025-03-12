@@ -1,0 +1,191 @@
+# Based on Youtuber Kevin Stratvert's video "Git and GitHub Tutorial for Beginners"
+
+- cd ~/Desktop/
+
+- mkdir 'practice'
+
+- cd ./practice
+
+- git init
+
+- touch .gitignore
+
+- python3
+
+- f2 = open('secret recipe.htm', 'w')
+
+- f2.write('<!DOCTYPE html> <html> <body> <h1>Ingredients</h1> <ul> <li>1 cup Butter or margarine, softened</li> <li>3/4 cup Sugar</li> <li>3/4 cup Brown sugar, packed</li> <li>2 Eggs, large</li> <li>2 teaspoons Vanilla</li> <li>2 1/4 cups Flour, unsifted</li> <li>1 teaspoon Baking soda</li> <li>1/2 teaspoon Salt</li> <li>1 cup Walnuts or pecans, chopped (optional)</li> <li>2 cups KCC Bittersweet 60% Cacao Baking Chips</li> </ul> <h1>Baking instructions</h1> <ul> <li>Heat oven to 375ºF.</li> <li>Stir flour with baking soda and salt; set aside.</li> <li>In large mixing bowl, beat butter with sugar, and brown sugar at medium speed until creamy and lightened in color.</li> <li>Add eggs and vanilla, one at a time. Mix on low speed until incorporated.</li> <li>Gradually blend dry mixture into creamed mixture. Stir in nuts and chocolate chips.</li> <li>Drop by tablespoon onto ungreased cookie sheets.</li> <li>Bake for 9 to 11 minutes or until chocolate chip cookies are golden brown.</li> <li>Enjoy!</li> </ul> </body> </html>')
+
+- f2.close()
+
+- import os
+
+- os.system("touch 'Primary Logo.png'")
+
+- f3 = open('index.htm', 'w')
+
+- f3.write('<!DOCTYPE html> <html> <body> <h1>Deliciousness in every bite!</h1> <p>Every cookie made at the Kevin Cookie company is crafted with only the best ingredients. Butter from grass fed cows. Unbleached flour with the best flavor and textures. Organic sugar from India and the Philippines. Eggs from chickens. Even our water is special. It comes from the Cascade Mountain springs that we hike up to retrieve. Baking is our passion and we take it very seriously.</p> </body> </html>')
+
+- f3.close()
+
+- f4 = open('Employee Salaries.txt', 'w') - f4.write('Adelev\t$106,280\nAlexw\t$135,049\nDiegos\t$217,238\nGradya\t$63,569\nHenriettam\t$203,418\nIsaiahl\t$179,026\nJohannaljonis\t$145,127\nLeeg\t$181,821\nLidiah\t$123,694\nLynner\t$93,934\nMeganb\t$99,726\nMiriamg\t$192,831\nNestorw\t$57,327\nPattif\t$4,511,840\nPradeepg\t$94,884\nKevstrat\t$35,015')
+
+- f4.close()
+
+- exit()
+
+- CHECK YOUR DESKTOP practice FOLDER 
+
+- git status
+
+- python3
+
+- f = open('.gitignore', 'w')
+
+- f.write('*.txt\n.DS_Store')
+
+- f.close()
+
+- exit()
+
+- git status
+
+- git add --all
+
+- git status
+
+- MANUALLY DELETE secret recipe.htm
+
+- git status
+
+- git restore 'secret recipe.htm'
+
+- git status
+
+- git commit -a -m "Commit to main"
+
+- git status
+
+- git ls-files
+
+- git branch -c UpdateTemp
+
+- git branch
+
+- git switch UpdateTemp
+
+- git branch
+
+- git status
+
+- python3 -c "import fileinput; [print(line.replace('375ºF', '500ºF'), end='') for line in fileinput.input('secret recipe.htm', inplace=True)]"
+
+- git status
+
+- git diff
+
+- git add 'secret recipe.htm'
+
+- git status
+
+- git commit -a -m "Changed temp 375-> 500"
+
+- git branch
+
+- git switch main
+
+- python3 -c "import fileinput; [print(line.replace('375ºF', '425ºF'), end='') for line in fileinput.input('secret recipe.htm', inplace=True)]"
+
+- git status
+
+- git diff
+
+- git add --all
+
+- git commit -a -m "375->425"
+
+- git merge -m "Merging attempt" UpdateTemp
+
+- MERGE CONFLICT
+
+- git diff
+
+- git status
+
+- MANUALLY RESOLVE BY LEAVING THE 425 TEMPERATURE SECTION IN TXT FILE
+
+- git status
+
+- git add 'secret recipe.htm'
+
+- git status
+
+- git branch
+
+- git ls-files
+
+- git commit -a -m "Leaving 425"
+
+- python3 -c "import fileinput; [print(line.replace('425ºF', '435ºF'), end='') for line in fileinput.input('secret recipe.htm', inplace=True)]"
+
+- git add 'secret recipe.htm'
+
+- git commit -a -m "Now 435"
+
+- git merge -m "2nd Merging attempt" UpdateTemp
+
+- git branch -vv
+
+- git diff main UpdateTemp
+
+- git switch UpdateTemp
+
+- git switch main
+
+- git fsck
+
+- git reflog expire --expire=now --all
+
+- git gc --prune=now
+
+- git fetch --all
+
+- git status
+
+- git diff main UpdateTemp
+
+- git checkout main
+
+- git merge UpdateTemp
+
+- git checkout UpdateTemp
+
+- git merge main
+
+- git log --oneline --graph --decorate --all
+
+- git checkout main
+
+- git log --oneline --graph --decorate --all
+
+- git branch -d UpdateTemp
+
+- rm -rf .git
+
+- rm -f .gitignore .gitattributes .gitmodules
+
+- git status
+
+- SEE FATAL MEANS GIT IS REMOVED
+
+- git init
+
+- git status
+
+- git add --all
+
+- git status
+
+- git commit -a -m "A brand new Git"
+
+- git status
