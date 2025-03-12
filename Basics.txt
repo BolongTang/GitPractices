@@ -1,4 +1,5 @@
 # Based on Youtuber Kevin Stratvert's video "Git and GitHub Tutorial for Beginners"
+# For Mac users. Go to your Terminal.
 
 - cd ~/Desktop/
 
